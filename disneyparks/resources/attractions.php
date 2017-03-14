@@ -8,8 +8,8 @@ class Attractions extends Controller {
         if(isset($_POST["parkid"])){
             $parkid = $_POST["parkid"];
         }
-        if(isset($_POST["resortid"])){
-            $resortid = $_POST["resortid"];
+        if(isset($_POST["region"])){
+            $region = $_POST["region"];
         }
         
         $attractions = $this->attractionsModel->getAttractionsByParkID($parkid, $region);

@@ -45,14 +45,19 @@ class ParkModel extends _main {
         $park = $this->getParkByIDWDPRO($parkid, $region);
         $schedule = $this->getParkScheduleWDPRO($parkid, $region);
         
-        $parksArray = array(
+        $schedules = '';
+        if(isset($schedule->schedules)){
+            $schedules = $schedule->schedules;
+        }
+        
+        $parkArray = array(
             "id" => $park->id,
             "name" => $park->name,
             "location" => $park->coordinates,
-            "schedules" => $schedule->schedules
+            "schedules" => $schedules
         );
 
-        return $parksArray;        
+        return $parkArray;        
     }
     
     public function getParksByResortID($resortid, $region='') {
@@ -72,7 +77,7 @@ class ParkModel extends _main {
             $parksArray[] = $parkArray;
         }
 
-        return $parksArray;        
+        return $parks;        
     }
 
 }

@@ -11,8 +11,8 @@ class Attraction extends Controller {
         if(isset($_POST["type"])){
             $type = $_POST["type"];
         }
-        if(isset($_POST["resortid"])){
-            $resortid = $_POST["resortid"];
+        if(isset($_POST["region"])){
+            $region = $_POST["region"];
         }
         
         $attractions = $this->attractionsModel->getAttractionByID($attractionid, $type, $region);
