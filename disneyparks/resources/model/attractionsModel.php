@@ -83,6 +83,12 @@ class AttractionsModel extends _main {
         $attractions = $this->getWaitTimesByParkIDWDPRO($parkid, $region)->entries;
         $attractionsArray = array();
         
+        $name = '';
+        
+        if(isset($attraction->name)){
+            $name = $attraction->name;
+        }
+        
         foreach ($attractions as $attraction) {
             $attractionArray = array();
             $attractionArray = array(
